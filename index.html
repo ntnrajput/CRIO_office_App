@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="refresh" content="0; url=https://script.google.com/macros/s/AKfycbzl42LBzu_pZwAt_ECo4GnTGfzXo-3jsjO4Bod7iiY8yFUD9Cc88qfe72AoFQo51T2WLQ/exec">
   <title>Redirecting...</title>
 
   <script>
-    // JS fallback in case meta refresh is blocked
-    window.location.href = "https://script.google.com/macros/s/AKfycbzl42LBzu_pZwAt_ECo4GnTGfzXo-3jsjO4Bod7iiY8yFUD9Cc88qfe72AoFQo51T2WLQ/exec";
+    // 🎯 Paste your Google Apps Script URL ONLY here
+    const TARGET_URL = "https://script.google.com/macros/s/AKfycbzaSxuctmDW2oLv99e2EESsznjIUW4OnVRfaqzmuyMzaB7b53Iku7bMGk2hFrNCm9qCJg/exec";
+
+    // Meta redirect injection
+    document.write(
+      `<meta http-equiv="refresh" content="0; url=${TARGET_URL}">`
+    );
+
+    // JS redirect fallback
+    window.location.href = TARGET_URL;
   </script>
 
   <style>
@@ -19,8 +26,11 @@
 </head>
 <body>
   <h2>Redirecting to application...</h2>
-  <p>If you are not redirected automatically, <a href="https://script.google.com/macros/s/AKfycbzl42LBzu_pZwAt_ECo4GnTGfzXo-3jsjO4Bod7iiY8yFUD9Cc88qfe72AoFQo51T2WLQ/exec">click here</a>.</p>
+  <p>If you are not redirected automatically, <a id="redirectLink" href="#">click here</a>.</p>
+
+  <script>
+    // Update link dynamically
+    document.getElementById("redirectLink").href = TARGET_URL;
+  </script>
 </body>
 </html>
-
-
